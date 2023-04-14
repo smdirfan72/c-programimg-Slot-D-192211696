@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main() {
+    char str[MAX_SIZE];
+    int sum = 0, i = 0;
+
+    printf("Enter a string: ");
+    fgets(str, MAX_SIZE, stdin);
+
+   
+    while(str[i] != '\0') {
+        sum += (int)str[i]; // add ASCII value of character to sum
+        i++;
+    }
+
+    printf("Sum of all characters: %d\n", sum);
+
+    return 0;
+}
