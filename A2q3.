@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void sort_descending(int arr[], int n);
+int find_second_largest(int arr[], int n);
+int find_second_smallest(int arr[], int n);
+
+int main() {
+    int n, i, avg;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    sort_descending(arr, n);
+
+    int second_largest = find_second_largest(arr, n);
+    int second_smallest = find_second_smallest(arr, n);
+    avg = (second_largest + second_smallest) / 2;
+
+    for (i = 0; i < n; i++) {
+        if (arr[i] == avg) {
+            printf("The average of the second largest and second smallest element, %d, is present in the array.", avg);
+            return 0;
+        }
+    }
+    printf("The average of the second largest and second smallest element, %d, is not present in the array.", avg);
+    return 0;
+    }
